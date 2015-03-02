@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Frostbite
+        psr4_prefix: Frostbite
         src_path: app

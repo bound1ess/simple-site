@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Frostbite\Commands;
 
 abstract class Command {
 

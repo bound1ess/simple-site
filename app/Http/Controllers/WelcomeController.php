@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Frostbite\Http\Controllers;
 
 class WelcomeController extends Controller {
 
