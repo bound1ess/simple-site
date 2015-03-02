@@ -21,9 +21,13 @@ class CategoryTableSeeder extends Seeder {
                     'parent_id' => null,
                 ]);
             } else {
+                do {
+                    $parentId = rand(1, $index);
+                } while ($index !== 1 and $parentId == $index);
+
                 Frostbite\Category::create([
                     'name' => $faker->sentence(),
-                    'parent_id' => rand(1, $index),
+                    'parent_id' => $parentId,
                 ]);
             }
         }
