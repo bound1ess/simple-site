@@ -21,8 +21,22 @@
             <div class="jumbotron">
                 <h1>{{ Lang::get('messages.project-name') }}</h1>
                 <p class="lead">{{ Lang::get('messages.project-desc') }}</p>
+                @yield('important')
             </div>
-            @yield('body')
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>{{ Lang::get('messages.navigation') }}</h2>
+                    @include('partials/menu')
+                </div>
+                <div class="col-lg-8">
+                    <h2>
+                        @section('navbar')
+                            {{ Lang::get('messages.project-name') }} &raquo;
+                        @stop
+                    </h2>
+                    @yield('body')
+                </div>
+            </div>
         </div>
         @yield('js')
     </body>
