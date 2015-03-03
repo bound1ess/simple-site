@@ -1,7 +1,7 @@
 <?php namespace Frostbite\Repos;
 
-use Frostbite\Category;
-use Frostbite\Misc\NestedCategoryMenu;
+use Frostbite\Category,
+    Frostbite\Misc\CategoryList;
 
 class CategoryRepo {
 
@@ -48,7 +48,15 @@ class CategoryRepo {
     {
         $list = new CategoryList($category);
 
-        // ...
+        // This filter selects child nodes.
+        $filter = function(Category $someCategory) use($category) {
+            return $someCategory->parent_id == $category->id;
+        };
+
+        // The recursive approach.
+        foreach (array_filter($categories, $filter) as $category) {
+            $list->addChildren($this->doBuild($category, $categories));
+        }
 
         return $list;
     }
