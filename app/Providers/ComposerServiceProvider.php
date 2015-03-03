@@ -10,7 +10,7 @@ class ComposerServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        View::composer('category-list', 'Frostbite\\Http\\Composers\\CategoryListComposer');
+        View::composer('*', 'Frostbite\\Http\\Composers\\CategoryListComposer');
     }
 
     /**
