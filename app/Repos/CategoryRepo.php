@@ -11,12 +11,12 @@ class CategoryRepo {
     protected $category;
 
     /**
-     * @param Category $category
+     * @param Category|null $category
      * @return CategoryRepo
      */
-    public function __construct(Category $category)
+    public function __construct(Category $category = null)
     {
-        $this->category = $category;
+        $this->category = $category ?: new Category;
     }
 
     /**
