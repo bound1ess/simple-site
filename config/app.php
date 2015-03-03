@@ -144,6 +144,7 @@ return [
 		'Frostbite\Providers\ConfigServiceProvider',
 		'Frostbite\Providers\EventServiceProvider',
 		'Frostbite\Providers\RouteServiceProvider',
+        'Frostbite\Providers\ComposerServiceProvider',
 
 	],
 
