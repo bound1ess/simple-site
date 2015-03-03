@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'page-title' => 'Foobar Org',
+    'project-name' => 'Foobar Org',
+    'project-desc' => 'Join our foobar community today!',
 ];
