@@ -12,11 +12,6 @@ class CategoryList {
     /**
      * @var array
      */
-    protected $categories = [];
-
-    /**
-     * @var array
-     */
     protected $children = [];
 
     /**
@@ -29,19 +24,10 @@ class CategoryList {
     }
 
     /**
-     * @param Category $category
-     * @return void
-     */
-    public function addCategory(Category $category)
-    {
-        $this->categories[] = $category;
-    }
-
-    /**
      * @param CategoryList $list
      * @return void
      */
-    public function addCategoryList(CategoryList $list)
+    public function addChildren(CategoryList $list)
     {
         $this->children[] = $list;
     }
@@ -55,11 +41,11 @@ class CategoryList {
     }
 
     /**
-     * @return array
+     * @return boolean
      */
-    public function getCategories()
+    public function hasNoChildren()
     {
-        return $this->categories;
+        return count($this->children) < 1;
     }
 
     /**
