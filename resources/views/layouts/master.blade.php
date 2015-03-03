@@ -7,7 +7,13 @@
                 {{ Lang::get('messages.page-title') }}
             @stop
         </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/united/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 80px;
+            }
+        </style>
         @yield('css')
     </head>
     <body>
