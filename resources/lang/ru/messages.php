@@ -7,4 +7,6 @@ return [
     'navigation' => 'Navigation',
 
     'important' => 'BREAKING',
+
+    'sub-categories' => 'Sub categories',
 ];

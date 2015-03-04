@@ -22,7 +22,7 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1>{{ Lang::get('messages.project-name') }}</h1>
+                <h1><a href="/">{{ Lang::get('messages.project-name') }}</a></h1>
                 <p class="lead">{{ Lang::get('messages.project-desc') }}</p>
                 <p class="lead">{{ Lang::get('messages.important') }}: @yield('important')</p>
             </div>

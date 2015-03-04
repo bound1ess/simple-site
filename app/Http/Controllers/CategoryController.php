@@ -29,6 +29,9 @@ class CategoryController extends Controller {
             abort(404);
         }
 
-        return view('category-list', ['categories' => $category->posts()]);
+        return view('category-list', [
+            'posts' => $category->posts,
+            'childCategories' => $category->childCategories(),
+        ]);
     }
 }

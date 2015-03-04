@@ -24,6 +24,14 @@ class Category extends Model {
      */
     public function posts()
     {
-        return $this->hasMany('Frostbite\Category');
+        return $this->hasMany('Frostbite\Post');
+    }
+
+    /**
+     * @return array
+     */
+    public function childCategories()
+    {
+        return $this->whereParentId($this->id)->get();
     }
 }
