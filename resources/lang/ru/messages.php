@@ -9,4 +9,6 @@ return [
     'important' => 'BREAKING',
 
     'sub-categories' => 'Sub categories',
+
+    'posts' => 'Posts',
 ];
