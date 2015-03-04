@@ -18,7 +18,7 @@ class PostTableSeeder extends Seeder {
                 'title' => $faker->sentence(),
                 'contents' => $faker->paragraph(5),
                 'is_important' => $faker->boolean(),
-                'category_id' => 1, // @todo
+                'category_id' => rand(1, 4),
             ]);
         }
     }
