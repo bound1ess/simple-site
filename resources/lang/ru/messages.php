@@ -5,4 +5,6 @@ return [
     'project-desc' => 'Join our foobar community today!',
 
     'navigation' => 'Navigation',
+
+    'important' => 'BREAKING',
 ];

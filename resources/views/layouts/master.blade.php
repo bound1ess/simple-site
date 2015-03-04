@@ -24,7 +24,7 @@
             <div class="jumbotron">
                 <h1>{{ Lang::get('messages.project-name') }}</h1>
                 <p class="lead">{{ Lang::get('messages.project-desc') }}</p>
-                @yield('important')
+                <p class="lead">{{ Lang::get('messages.important') }}: @yield('important')</p>
             </div>
             <div class="row">
                 <div class="col-lg-4">
