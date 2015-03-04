@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/united/bootstrap.min.css">
         <style>
             body {
-                padding-top: 60px;
+                padding-top: 30px;
                 padding-bottom: 80px;
             }
             ul > li {
@@ -29,6 +29,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h2>{{ Lang::get('messages.navigation') }}</h2>
+                    <hr>
                     @include('partials/menu')
                 </div>
                 <div class="col-lg-8">

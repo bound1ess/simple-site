@@ -1,6 +1,22 @@
 <?php namespace Frostbite\Http\Controllers;
 
+use Frostbite\Repos\PostRepo;
+
 class PostController extends Controller {
+
+    /**
+     * @var PostRepo
+     */
+    protected $repo;
+
+    /**
+     * @param PostRepo $repo
+     * @return PostController
+     */
+    public function __construct(PostRepo $repo)
+    {
+        $this->repo = $repo;
+    }
 
     /**
      * @param integer $id
@@ -9,6 +25,10 @@ class PostController extends Controller {
      */
     public function show($id)
     {
-        echo $id;
+        if (is_null($post = $this->repo->get($id))) {
+            abort(404);
+        }
+
+        return view('post', compact('post'));
     }
 }
