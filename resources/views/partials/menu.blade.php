@@ -1,7 +1,7 @@
 <ul type="circle">
     @foreach ($categories as $category)
         <li>
-            <a href="/post/{{ $category->getRootCategory()->id }}">
+            <a href="/category/{{ $category->getRootCategory()->id }}">
                 {{ $category->getRootCategory()->name }}
             </a>
         </li>
