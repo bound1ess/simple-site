@@ -1,9 +1,13 @@
 <ul type="circle">
     @foreach ($categories as $category)
         <li>
-            <a href="/category/{{ $category->getRootCategory()->id }}">
+            @if ( ! isset($categoryId) or $category->getRootCategory()->id != $categoryId)
+                <a href="/category/{{ $category->getRootCategory()->id }}">
+                    {{ $category->getRootCategory()->name }}
+                </a>
+            @else
                 {{ $category->getRootCategory()->name }}
-            </a>
+            @endif
         </li>
         @if (count($category->getChildren()) > 0)
             @include('partials/menu', ['categories' => $category->getChildren()])

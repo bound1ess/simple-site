@@ -32,6 +32,7 @@ class CategoryController extends Controller {
         return view('category-list', [
             'posts' => $category->posts,
             'childCategories' => $category->childCategories(),
+            'categoryId' => $id,
         ]);
     }
 }
