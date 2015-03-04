@@ -13,6 +13,9 @@
                 padding-top: 60px;
                 padding-bottom: 80px;
             }
+            ul > li {
+                font-size: 150%;
+            }
         </style>
         @yield('css')
     </head>
