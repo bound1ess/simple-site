@@ -29,6 +29,9 @@ class PostController extends Controller {
             abort(404);
         }
 
-        return view('post', compact('post'));
+        return view('post', [
+            'post' => $post,
+            'categoryId' => $post->category_id,
+        ]);
     }
 }
