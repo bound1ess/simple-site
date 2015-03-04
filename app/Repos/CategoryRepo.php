@@ -20,6 +20,16 @@ class CategoryRepo {
     }
 
     /**
+     * @param int $id
+     *
+     * @return Category|null
+     */
+    public function get($id)
+    {
+        return $this->category->find($id);
+    }
+
+    /**
      * @return array
      */
     public function buildList()

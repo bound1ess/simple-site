@@ -18,4 +18,12 @@ class Category extends Model {
      * @var array
      */
     protected $fillable = ['name', 'parent_id'];
+
+    /**
+     * @return object
+     */
+    public function posts()
+    {
+        return $this->hasMany('Frostbite\Category');
+    }
 }
