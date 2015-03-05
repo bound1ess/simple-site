@@ -26,4 +26,12 @@ class PostRepo {
     {
         return $this->post->find($id);
     }
+
+    /**
+     * @return array
+     */
+    public function getImportantPosts()
+    {
+        return $this->post->where('is_important', true)->get();
+    }
 }

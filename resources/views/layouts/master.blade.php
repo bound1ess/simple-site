@@ -24,7 +24,10 @@
             <div class="jumbotron">
                 <h1><a href="/">{{ Lang::get('messages.project-name') }}</a></h1>
                 <p class="lead">{{ Lang::get('messages.project-desc') }}</p>
-                <p class="lead">{{ Lang::get('messages.important') }}: @yield('important')</p>
+                <p class="lead">
+                    {{ Lang::get('messages.important') }}:
+                    @include('partials/important')
+                </p>
             </div>
             <div class="row">
                 <div class="col-lg-4">
