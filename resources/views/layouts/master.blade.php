@@ -39,6 +39,9 @@
                 <div class="col-lg-4">
                     <h2>{{ Lang::get('messages.navigation') }}</h2>
                     @include('partials/menu')
+                    <ul type="circle">
+                        <li><a href="/admin/login">{{ Lang::get('messages.login') }}</a></li>
+                    </ul>
                 </div>
                 <div class="col-lg-8">
                     <h2>

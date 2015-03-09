@@ -11,4 +11,6 @@ return [
     'sub-categories' => 'Sub categories',
 
     'posts' => 'Posts',
+
+    'login' => 'Log In',
 ];
