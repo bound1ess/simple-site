@@ -7,7 +7,7 @@
                 {{ Lang::get('messages.project-name') }}
             @show
         </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/united/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/flatly/bootstrap.min.css">
         <style>
             body {
                 padding-top: 30px;
@@ -20,7 +20,7 @@
             }
 
             #head {
-                background: url('/jumbotron_bg.png');
+                /* background: url('/jumbotron_bg.png'); */
             }
         </style>
         @yield('css')
@@ -38,7 +38,6 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h2>{{ Lang::get('messages.navigation') }}</h2>
-                    <hr>
                     @include('partials/menu')
                 </div>
                 <div class="col-lg-8">
