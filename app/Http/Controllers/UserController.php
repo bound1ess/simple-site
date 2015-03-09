@@ -7,6 +7,6 @@ class UserController extends Controller {
      */
     public function show()
     {
-        return 'Hello, world!';
+        return view('login');
     }
 }
