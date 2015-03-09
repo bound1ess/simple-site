@@ -12,18 +12,22 @@
             body {
                 padding-top: 30px;
                 padding-bottom: 80px;
-                background: url('/sprinkles.png');
+                background: url('/bg.png');
             }
 
             ul > li {
                 font-size: 150%;
+            }
+
+            #head {
+                background: url('/jumbotron_bg.png');
             }
         </style>
         @yield('css')
     </head>
     <body>
         <div class="container">
-            <div class="jumbotron">
+            <div class="jumbotron" id="head">
                 <h1><a href="/">{{ Lang::get('messages.project-name') }}</a></h1>
                 <p class="lead">{{ Lang::get('messages.project-desc') }}</p>
                 <p class="lead">
