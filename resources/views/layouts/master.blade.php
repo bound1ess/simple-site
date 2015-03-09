@@ -12,7 +12,9 @@
             body {
                 padding-top: 30px;
                 padding-bottom: 80px;
+                background: url('/sprinkles.png');
             }
+
             ul > li {
                 font-size: 150%;
             }
