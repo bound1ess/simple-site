@@ -18,7 +18,7 @@
         <h2 class="form-signin-heading">{{ Lang::get('messages.login') }}</h2>
 
         @if (Session::has('error_message'))
-            <p class="lead">{{ Session::get('error_message') }}</p>
+            <div class="alert alert-danger">{{ Session::get('error_message') }}</div>
         @endif
 
         <label for="inputEmail" class="sr-only">{{ Lang::get('messages.email') }}</label>
