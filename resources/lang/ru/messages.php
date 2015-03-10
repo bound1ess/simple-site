@@ -10,7 +10,11 @@ return [
     'posts'          => 'Posts',
 
     // Login related.
-    'login' => 'Log In',
-    'email' => 'E-mail',
-    'pswd'  => 'Password',
+    'login'   => 'Log In',
+    'email'   => 'E-mail',
+    'pswd'    => 'Password',
+    'logout'  => 'Log out',
+    'profile' => 'Profile',
+
+    'back-to-site' => 'Back to site',
 ];

@@ -14,8 +14,15 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">{{ trans('messages.project-name') }}</a>
+                    <a class="navbar-brand" href="/admin/dashboard">
+                        {{ trans('messages.project-name') }}
+                    </a>
                 </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">{{ trans('messages.back-to-site') }}</a></li>
+                    <li><a href="/admin/profile">{{ trans('messages.profile') }}</a></li>
+                    <li><a href="/admin/logout">{{ trans('messages.logout') }}</a></li>
+                </ul>
             </div>
         </nav>
         <div class="container">
