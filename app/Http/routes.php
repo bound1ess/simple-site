@@ -1,7 +1,10 @@
 <?php
 
-// Public.
+// Public. The main page.
 Route::get('/', 'MainPageController@index');
+Route::get('home', 'MainPageController@index');
+
+// Posts and categories.
 Route::get('post/{id}', 'PostController@show');
 Route::get('category/{id}', 'CategoryController@show');
 
@@ -9,7 +12,7 @@ Route::get('category/{id}', 'CategoryController@show');
 Route::group(['prefix' => 'auth', 'middleware' => 'guest'], function() {
 
     // The login form and its handler.
-    Route::get('login', 'UserController@show');
+    Route::get('login', 'UserController@form');
     Route::post('login', 'UserController@auth');
 });
 
@@ -24,4 +27,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // The profile page.
     Route::get('profile', 'UserController@profile');
+
+    // The posts page.
+    Route::get('posts', 'UserController@posts');
+
+    // The categories page.
+    Route::get('categories', 'UserController@categories');
 });

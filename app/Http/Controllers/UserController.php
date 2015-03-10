@@ -7,12 +7,8 @@ class UserController extends Controller {
     /**
      * @return Response
      */
-    public function show()
+    public function form()
     {
-        if (Auth::check()) {
-            return redirect()->to('admin/dashboard');
-        }
-
         return view('login');
     }
 
@@ -22,7 +18,7 @@ class UserController extends Controller {
     public function auth()
     {
         if (Auth::attempt(Request::only('email', 'password'), true)) {
-            return redirect()->to('admin/dashboard');
+            return redirect()->intended('admin/dashboard');
         } else {
             return redirect()->back()->withInput()
                 ->with('error_message', trans('errors.login'));
@@ -53,5 +49,21 @@ class UserController extends Controller {
     public function profile()
     {
         return view('admin.profile');
+    }
+
+    /**
+     * @return Response
+     */
+    public function posts()
+    {
+        return view('admin.posts');
+    }
+
+    /**
+     * @return Response
+     */
+    public function categories()
+    {
+        return view('admin.categories');
     }
 }
