@@ -4,13 +4,9 @@
     <div class="row">
         <div class="col-lg-2 well">
             <ul class="list-unstyled">
-                <li><a href="/admin/dashboard">{{ trans('messages.main') }}</a></li>
-                <li><a href="/admin/dashboard/posts">{{ trans('messages.posts') }}</a></li>
-                <li>
-                    <a href="/admin/dashboard/categories">
-                        {{ trans('messages.categories') }}
-                    </a>
-                </li>
+                {!! smart_link('/admin/dashboard', trans('messages.main')) !!}
+                {!! smart_link('/admin/posts', trans('messages.posts')) !!}
+                {!! smart_link('/admin/categories', trans('messages.categories')) !!}
             </ul>
         </div>
 

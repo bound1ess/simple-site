@@ -21,7 +21,10 @@
 		],
 		"psr-4": {
 			"Frostbite\\": "app/"
-		}
+		},
+        "files": [
+            "app/Misc/helpers.php"
+        ]
 	},
 
 	"autoload-dev": {
