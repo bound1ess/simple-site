@@ -16,10 +16,17 @@
     <div class="container">
       <form class="form-signin" action="/auth/login" method="post">
         <h2 class="form-signin-heading">{{ Lang::get('messages.login') }}</h2>
+
+        @if (Session::has('error_message'))
+            <p class="lead">{{ Session::get('error_message') }}</p>
+        @endif
+
         <label for="inputEmail" class="sr-only">{{ Lang::get('messages.email') }}</label>
-        <input type="email" name="email" class="form-control" placeholder="{{ trans('messages.email') }}" required autofocus>
+        <input type="email" name="email" class="form-control" placeholder="{{ trans('messages.email') }}" value="{{ old('email') }}" required autofocus>
+
         <label for="inputPassword" class="sr-only">{{ Lang::get('messages.pswd') }}</label>
-        <input type="password" name="password" class="form-control" placeholder="{{ trans('messages.pswd') }}" required>
+        <input type="password" name="password" class="form-control" placeholder="{{ trans('messages.pswd') }}" value="{{ old('password') }}" required>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">
             {{ Lang::get('messages.login') }}
         </button>

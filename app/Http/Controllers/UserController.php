@@ -24,7 +24,8 @@ class UserController extends Controller {
         if (Auth::attempt(Request::only('email', 'password'), true)) {
             return redirect()->to('admin/dashboard');
         } else {
-            return redirect()->to('admin/login')->withStatus(false);
+            return redirect()->back()->withInput()
+                ->with('error_message', trans('errors.login'));
         }
     }
 
