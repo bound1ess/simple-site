@@ -20,7 +20,13 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">{{ trans('messages.back-to-site') }}</a></li>
-                    <li><a href="/admin/profile">{{ trans('messages.profile') }}</a></li>
+
+                    @if (Request::path() == 'admin/profile')
+                        <li class="active"><a href="#">{{ trans('messages.profile') }}</a></li>
+                    @else
+                        <li><a href="/admin/profile">{{ trans('messages.profile') }}</a></li>
+                    @endif
+
                     <li><a href="/admin/logout">{{ trans('messages.logout') }}</a></li>
                 </ul>
             </div>
