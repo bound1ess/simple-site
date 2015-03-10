@@ -31,6 +31,16 @@ class UserController extends Controller {
     /**
      * @return Response
      */
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->to('/');
+    }
+
+    /**
+     * @return Response
+     */
     public function dashboard()
     {
         return view('admin/dashboard');

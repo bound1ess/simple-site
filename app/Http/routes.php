@@ -8,10 +8,20 @@ Route::get('/category/{id}', 'CategoryController@show');
 
 // Admin.
 Route::group(['prefix' => 'admin'], function() {
-    // Auth.
+
+    // The login page.
     Route::get('/login', 'UserController@show');
     Route::post('/auth', 'UserController@auth');
 
+    // The logout page.
+    Route::get('/logout', [
+        'middleware' => 'auth',
+        'uses'       => 'UserController@logout',
+    ]);
+
     // The dashboard.
-    Route::get('/dashboard', 'UserController@dashboard', ['middleware' => 'auth']);
+    Route::get('/dashboard', [
+        'middleware' => 'auth',
+        'uses'       => 'UserController@dashboard',
+    ]);
 });
