@@ -7,7 +7,7 @@
                 {{ trans('messages.project-name') }}
             @show
         </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/readable/bootstrap.min.css">
         <style>
             body {
                 padding-top: 30px;
