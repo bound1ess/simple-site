@@ -1,27 +1,24 @@
 <?php
 
+// Public.
 Route::get('/', 'MainPageController@index');
+Route::get('post/{id}', 'PostController@show');
+Route::get('category/{id}', 'CategoryController@show');
 
-Route::get('/post/{id}', 'PostController@show');
+// Auth functions.
+Route::group(['prefix' => 'auth', 'middleware' => 'guest'], function() {
 
-Route::get('/category/{id}', 'CategoryController@show');
+    // The login form and its handler.
+    Route::get('login', 'UserController@show');
+    Route::post('login', 'UserController@auth');
+});
 
-// Admin.
-Route::group(['prefix' => 'admin'], function() {
-
-    // The login page.
-    Route::get('/login', 'UserController@show');
-    Route::post('/auth', 'UserController@auth');
+// Admin pages.
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // The logout page.
-    Route::get('/logout', [
-        'middleware' => 'auth',
-        'uses'       => 'UserController@logout',
-    ]);
+    Route::get('logout', 'UserController@logout');
 
     // The dashboard.
-    Route::get('/dashboard', [
-        'middleware' => 'auth',
-        'uses'       => 'UserController@dashboard',
-    ]);
+    Route::get('dashboard', 'UserController@dashboard');
 });

@@ -14,7 +14,7 @@
 
   <body>
     <div class="container">
-      <form class="form-signin" action="/admin/auth" method="post">
+      <form class="form-signin" action="/auth/login" method="post">
         <h2 class="form-signin-heading">{{ Lang::get('messages.login') }}</h2>
         <label for="inputEmail" class="sr-only">{{ Lang::get('messages.email') }}</label>
         <input type="email" name="email" class="form-control" placeholder="{{ trans('messages.email') }}" required autofocus>

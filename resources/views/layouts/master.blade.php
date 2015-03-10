@@ -40,7 +40,7 @@
                     <h2>{{ Lang::get('messages.navigation') }}</h2>
                     @include('partials/menu')
                     <ul type="circle">
-                        <li><a href="/admin/login">{{ Lang::get('messages.login') }}</a></li>
+                        <li><a href="/auth/login">{{ Lang::get('messages.login') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-8">
