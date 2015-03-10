@@ -33,6 +33,6 @@ class UserController extends Controller {
      */
     public function dashboard()
     {
-        return 'Hello!';
+        return view('admin/dashboard');
     }
 }
