@@ -21,5 +21,5 @@ return [
     // Related to the dashboard.
     'main'       => 'Main',
     'categories' => 'Categories',
-    // ...
+    'dashboard'  => 'Dashboard',
 ];
