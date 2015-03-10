@@ -21,4 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // The dashboard.
     Route::get('dashboard', 'UserController@dashboard');
+
+    // The profile page.
+    Route::get('profile', 'UserController@profile');
 });

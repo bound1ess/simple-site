@@ -43,6 +43,14 @@ class UserController extends Controller {
      */
     public function dashboard()
     {
-        return view('admin/dashboard');
+        return view('admin.dashboard');
+    }
+
+    /**
+     * @return Response
+     */
+    public function profile()
+    {
+        return view('admin.profile');
     }
 }

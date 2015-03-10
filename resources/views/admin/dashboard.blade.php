@@ -14,7 +14,7 @@
         <div class="col-lg-1"></div>
 
         <div class="col-lg-9 well">
-            Hello, world!
+            @yield('dashboard-body')
         </div>
     </div>
 
