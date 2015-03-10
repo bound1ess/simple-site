@@ -17,4 +17,9 @@ return [
     'profile' => 'Profile',
 
     'back-to-site' => 'Back to site',
+
+    // Related to the dashboard.
+    'main'       => 'Main',
+    'categories' => 'Categories',
+    // ...
 ];
