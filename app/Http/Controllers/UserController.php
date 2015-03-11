@@ -39,9 +39,19 @@ class UserController extends Controller {
     /**
      * @return Response
      */
-    public function dashboard()
+    public function main()
     {
         return view('admin.main');
+    }
+
+    /**
+     * @return Response
+     */
+    public function saveMain()
+    {
+        $input = Request::only('name', 'desc');
+
+        dd($input);
     }
 
     /**

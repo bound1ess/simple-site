@@ -22,8 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // The logout page.
     Route::get('logout', 'UserController@logout');
 
-    // The dashboard.
-    Route::get('dashboard', 'UserController@dashboard');
+    // The dashboard page and its handler.
+    Route::get('dashboard', 'UserController@main');
+    Route::post('dashboard', 'UserController@saveMain');
 
     // The profile page and its handler.
     Route::get('profile', 'UserController@profile');
