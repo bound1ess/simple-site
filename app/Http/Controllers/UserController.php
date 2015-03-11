@@ -1,6 +1,6 @@
 <?php namespace Frostbite\Http\Controllers;
 
-use Auth, Request;
+use Auth, Hash, Request;
 use Frostbite\Validators\UserValidator;
 
 class UserController extends Controller {
@@ -62,6 +62,22 @@ class UserController extends Controller {
         if ( ! with(new UserValidator)->validate($input)) {
             return redirect()->back()->withInput()->withMessage(trans('errors.profile'));
         }
+
+        $user = Auth::user();
+
+        if ( ! Hash::check($input['old_password'], $user->password)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.pswd_mismatch'));
+        }
+
+        $user->email = $input['email'];
+
+        if ($input['new_password']) {
+            $user->password = Hash::make($input['new_password']);
+        }
+
+        $user->save();
+
+        return redirect()->to('admin/dashboard');
     }
 
     /**

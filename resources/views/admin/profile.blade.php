@@ -12,7 +12,8 @@
                 {{ trans('messages.email') }}*
             </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}">
+                <input type="email" class="form-control" name="email"
+                    value="{{ old('email') ?: Auth::user()->email }}">
             </div>
         </div>
 
