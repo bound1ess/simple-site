@@ -57,7 +57,11 @@ class UserController extends Controller {
      */
     public function saveProfile()
     {
-        echo 'Hello, world!';
+        $input = Request::only('email', 'old_password', 'new_password');
+
+        if ( ! with(new UserValidator)->validate($input)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.profile'));
+        }
     }
 
     /**
