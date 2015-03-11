@@ -2,7 +2,7 @@
 
 use Storage;
 
-class LangFileUpdater {
+class ConfigFileUpdater {
 
     /**
      * @param string $file
@@ -11,7 +11,7 @@ class LangFileUpdater {
      */
     public function update($file, $key, $value)
     {
-        $path     = sprintf('resources/lang/ru/%s.php', $file);
+        $path     = sprintf('config/%s.php', $file);
         $contents = Storage::get($path);
 
         $contents = preg_replace(
