@@ -8,8 +8,19 @@
             </label>
 
             <div class="col-sm-8">
-                <input type="text" class="form-control"
+                <input type="text" class="form-control" name="name"
                     value="{{ old('name') ?: trans('messages.project-name') }}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label">
+                {{ trans('messages.desc') }}
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control" name="desc"
+                    value="{{ old('desc') ?: trans('messages.project-desc') }}">
             </div>
         </div>
 
