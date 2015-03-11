@@ -26,4 +26,7 @@ return [
     'save' => 'Save',
     'old-pswd' => 'Old password',
     'new-pswd' => 'New password',
+
+    'name' => 'Project name',
+    'desc' => 'The slogan',
 ];
