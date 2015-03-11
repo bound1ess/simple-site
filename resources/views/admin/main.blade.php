@@ -15,7 +15,7 @@
 
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="name"
-                    value="{{ old('name') ?: trans('messages.project-name') }}">
+                    value="{{ old('name') ?: Config::get('main-page.name') }}">
             </div>
         </div>
 
@@ -26,7 +26,7 @@
 
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="desc"
-                    value="{{ old('desc') ?: trans('messages.project-desc') }}">
+                    value="{{ old('desc') ?: Config::get('main-page.slogan') }}">
             </div>
         </div>
 

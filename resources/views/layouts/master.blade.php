@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>
             @section('title')
-                {{ trans('messages.project-name') }}
+                {{ Config::get('main-page.name') }}
             @show
         </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/readable/bootstrap.min.css">
@@ -28,8 +28,8 @@
     <body>
         <div class="container">
             <div class="jumbotron" id="head">
-                <h1><a href="/">{{ trans('messages.project-name') }}</a></h1>
-                <p class="lead">{{ trans('messages.project-desc') }}</p>
+                <h1><a href="/">{{ Config::get('main-page.name') }}</a></h1>
+                <p class="lead">{{ Config::get('main-page.slogan') }}</p>
                 <p class="lead">
                     {{ trans('messages.important') }}:
                     @include('partials/important')

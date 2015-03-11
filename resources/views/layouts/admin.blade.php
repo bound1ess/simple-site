@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{{ trans('messages.project-name') }}</title>
+        <title>{{ Config::get('main-page.name') }}</title>
         <style>
             body {
                 padding-top: 80px;
@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/admin/dashboard">
-                        {{ trans('messages.project-name') }}
+                        {{ Config::get('main-page.name') }}
                     </a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
