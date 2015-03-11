@@ -22,4 +22,8 @@ return [
     'main'       => 'Main',
     'categories' => 'Categories',
     'dashboard'  => 'Dashboard',
+
+    'save' => 'Save',
+    'old-pswd' => 'Old password',
+    'new-pswd' => 'New password',
 ];
