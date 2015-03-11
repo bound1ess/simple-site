@@ -1,7 +1,10 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
-    <!-- <h3>{{ trans('messages.profile') }}</h3> -->
+    <!-- The error message. -->
+    @if (Session::has('message'))
+        <div class="alert alert-danger">{{ Session::get('message') }}</div>
+    @endif
 
     <form method="post" action="/{{ Request::path() }}" class="form-horizontal">
         <div class="form-group">
