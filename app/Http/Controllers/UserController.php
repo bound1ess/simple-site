@@ -1,6 +1,7 @@
 <?php namespace Frostbite\Http\Controllers;
 
 use Auth, Request;
+use Frostbite\Validators\UserValidator;
 
 class UserController extends Controller {
 
