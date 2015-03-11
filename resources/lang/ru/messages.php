@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'project-name' => 'Foobar Org',
+    'project-name' => 'Foo and Co',
     'project-desc' => 'Join our foobar community today!',
 
     'navigation'     => 'Navigation',
