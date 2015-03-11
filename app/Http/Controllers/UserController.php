@@ -54,6 +54,14 @@ class UserController extends Controller {
     /**
      * @return Response
      */
+    public function saveProfile()
+    {
+        echo 'Hello, world!';
+    }
+
+    /**
+     * @return Response
+     */
     public function posts()
     {
         return view('admin.posts');

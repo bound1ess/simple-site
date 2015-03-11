@@ -9,7 +9,7 @@
                 {{ trans('messages.email') }}*
             </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" name="email" placeholder="foo">
+                <input type="email" class="form-control" name="email" value="{{ Auth::user()->email }}">
             </div>
         </div>
 
@@ -39,5 +39,8 @@
                 </button>
             </div>
         </div>
+
+        <!-- The CSRF token. -->
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
 @stop
