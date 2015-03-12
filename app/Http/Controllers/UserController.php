@@ -39,24 +39,6 @@ class UserController extends Controller {
     /**
      * @return Response
      */
-    public function main()
-    {
-        return view('admin.main');
-    }
-
-    /**
-     * @return Response
-     */
-    public function saveMain()
-    {
-        $input = Request::only('name', 'desc');
-
-        dd($input);
-    }
-
-    /**
-     * @return Response
-     */
     public function profile()
     {
         return view('admin.profile');
@@ -88,21 +70,5 @@ class UserController extends Controller {
         $user->save();
 
         return redirect()->to('admin/dashboard');
-    }
-
-    /**
-     * @return Response
-     */
-    public function posts()
-    {
-        return view('admin.posts');
-    }
-
-    /**
-     * @return Response
-     */
-    public function categories()
-    {
-        return view('admin.categories');
     }
 }

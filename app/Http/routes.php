@@ -23,16 +23,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('logout', 'UserController@logout');
 
     // The dashboard page and its handler.
-    Route::get('dashboard', 'UserController@main');
-    Route::post('dashboard', 'UserController@saveMain');
+    Route::get('dashboard', 'AdminController@main');
+    Route::post('dashboard', 'AdminController@saveMain');
 
     // The profile page and its handler.
     Route::get('profile', 'UserController@profile');
     Route::post('profile', 'UserController@saveProfile');
 
     // The posts page.
-    Route::get('posts', 'UserController@posts');
+    Route::get('posts', 'AdminController@posts');
 
     // The categories page.
-    Route::get('categories', 'UserController@categories');
+    Route::get('categories', 'AdminController@categories');
 });
