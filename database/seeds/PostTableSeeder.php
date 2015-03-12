@@ -17,7 +17,7 @@ class PostTableSeeder extends Seeder {
             Frostbite\Post::create([
                 'title'        => $faker->sentence(),
                 'contents'     => $faker->paragraph(12),
-                'is_important' => $faker->boolean(2),
+                'is_important' => $faker->boolean(),
                 'category_id'  => rand(1, 4),
             ]);
         }

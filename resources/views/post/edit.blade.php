@@ -28,7 +28,8 @@
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="is_important">
+                        <input type="checkbox" name="is_important"
+                            {{(old('is_important') ?: $post->is_important) ? ' checked':''}}>
                         {{ trans('messages.important') }}
                     </label>
                 </div>
