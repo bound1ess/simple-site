@@ -40,6 +40,8 @@ class PostRepo {
      */
     public function all()
     {
-        return $this->post->get()->sortBy('id');
+        return $this->post->get()->sortBy(function(Post $post) {
+            return -1 * $post->id;
+        });
     }
 }
