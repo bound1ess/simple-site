@@ -29,13 +29,6 @@ class PostController extends Controller {
             abort(404);
         }
 
-        // This feature is insane, just look.
-        $match = [];
-
-        if (preg_match('/^@static\s(?P<file>.+)$/', $post->contents, $match)) {
-            $post->contents = view('static.' . $match['file']);
-        }
-
         return view('post', [
             'post' => $post,
             'categoryId' => $post->category_id,
