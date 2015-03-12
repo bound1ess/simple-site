@@ -2,8 +2,23 @@
 
 use Request;
 use Frostbite\Validators\MainPageValidator, Frostbite\Misc\ConfigFileUpdater;
+use Frostbite\Repos\PostRepo;
 
 class AdminController extends Controller {
+
+    /**
+     * @var PostRepo
+     */
+    protected $repo;
+
+    /**
+     * @param PostRepo $repo
+     * @return AdminController
+     */
+    public function __construct(PostRepo $repo)
+    {
+        $this->repo = $repo;
+    }
 
     /**
      * @return Response
@@ -36,7 +51,7 @@ class AdminController extends Controller {
      */
     public function posts()
     {
-        return view('admin.posts');
+        return view('admin.posts')->withPosts($this->repo->all());
     }
 
     /**

@@ -28,10 +28,18 @@ class PostRepo {
     }
 
     /**
-     * @return array
+     * @return Illuminate\Support\Collection
      */
     public function getImportantPosts()
     {
         return $this->post->where('is_important', true)->get();
+    }
+
+    /**
+     * @return Illuminate\Support\Collection
+     */
+    public function all()
+    {
+        return $this->post->get()->sortBy('id');
     }
 }

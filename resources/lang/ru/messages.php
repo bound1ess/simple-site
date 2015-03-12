@@ -29,4 +29,6 @@ return [
 
     'name' => 'Project name',
     'desc' => 'The slogan',
+
+    'edit' => 'Edit',
 ];
