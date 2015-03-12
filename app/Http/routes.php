@@ -36,3 +36,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     // The categories page.
     Route::get('categories', 'AdminController@categories');
 });
+
+// Only available to the registered users.
+Route::group(['middleware' => 'auth'], function() {
+
+    // Edit posts.
+    Route::get('posts/{id}/edit', 'PostController@edit');
+});

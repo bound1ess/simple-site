@@ -19,8 +19,7 @@ class PostController extends Controller {
     }
 
     /**
-     * @param integer $id
-     *
+     * @param int $id
      * @return Response
      */
     public function show($id)
@@ -33,5 +32,14 @@ class PostController extends Controller {
             'post' => $post,
             'categoryId' => $post->category_id,
         ]);
+    }
+
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        dd((int) $id);
     }
 }
