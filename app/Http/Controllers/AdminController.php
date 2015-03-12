@@ -1,6 +1,7 @@
 <?php namespace Frostbite\Http\Controllers;
 
 use Request;
+use Frostbite\Validators\MainPageValidator, Frostbite\Misc\ConfigFileUpdater;
 
 class AdminController extends Controller {
 
@@ -19,7 +20,15 @@ class AdminController extends Controller {
     {
         $input = Request::only('name', 'desc');
 
-        dd($input);
+        if ( ! with(new MainPageValidator)->validate($input)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.main-page'));
+        }
+
+        with($updater = new ConfigFileUpdater)->update('main-page', 'name', $input['name']);
+
+        $updater->update('main-page', 'slogan', $input['desc']);
+
+        return redirect()->to('/');
     }
 
     /**

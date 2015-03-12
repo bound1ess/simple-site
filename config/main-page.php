@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'name' => 'Foobar',
+    'name' => 'The Foobar Company',
 
-    'slogan' => 'Join Foobar Today.',
+    'slogan' => 'Join the Foobar Forces.',
 
     'description' => 'Our Foobar organisation is so awesome.',
 
@@ -12,13 +12,13 @@ return [
     'maintainers' => [
         // ...
         [
-            'name' => 'John Doe',
+            'name' => 'The Foobar Company',
             'email' => 'johndoe@example.com',
             'phone' => '+5151616161',
         ],
 
         [
-            'name' => 'Jack Foobar',
+            'name' => 'The Foobar Company',
             'email' => 'foo@bar.org',
             'phone' => '+3141515272',
         ],

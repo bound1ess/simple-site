@@ -58,7 +58,8 @@ class UserController extends Controller {
         $user = Auth::user();
 
         if ( ! Hash::check($input['old_password'], $user->password)) {
-            return redirect()->back()->withInput()->withMessage(trans('errors.pswd_mismatch'));
+            return redirect()->back()->withInput()
+                ->withMessage(trans('errors.pswd-mismatch'));
         }
 
         $user->email = $input['email'];
