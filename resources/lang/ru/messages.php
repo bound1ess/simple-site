@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'project-name' => 'Foo and Co',
-    'project-desc' => 'Join our foobar community today!',
+    //'project-name' => 'Foo and Co',
+    //'project-desc' => 'Join our foobar community today!',
 
     'navigation'     => 'Navigation',
-    'important'      => 'BREAKING',
+    'important'      => 'Important',
     'sub-categories' => 'Sub categories',
     'posts'          => 'Posts',
 
@@ -31,4 +31,6 @@ return [
     'desc' => 'The slogan',
 
     'edit' => 'Edit',
+    'title' => 'Title',
+    'contents' => 'Contents',
 ];
