@@ -30,11 +30,15 @@
             <div class="jumbotron" id="head">
                 <h1><a href="/">{{ Config::get('main-page.name') }}</a></h1>
                 <p class="lead">{{ Config::get('main-page.slogan') }}</p>
-                <p class="lead">
-                    {{ trans('messages.important') }}:
-                    @include('partials/important')
-                </p>
+
+                @if (count($importantPosts) > 0)
+                    <p class="lead">
+                        {{ trans('messages.important') }} ({{ count($importantPosts) }}):
+                        @include('partials/important')
+                    </p>
+                @endif
             </div>
+
             <div class="row">
                 <div class="col-lg-4">
                     <h2>{{ trans('messages.navigation') }}</h2>
