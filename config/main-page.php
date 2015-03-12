@@ -12,13 +12,13 @@ return [
     'maintainers' => [
         // ...
         [
-            'name' => 'The Foobar Company',
+            'real_name' => 'John Doe',
             'email' => 'johndoe@example.com',
             'phone' => '+5151616161',
         ],
 
         [
-            'name' => 'The Foobar Company',
+            'real_name' => 'Mr. FooBar',
             'email' => 'foo@bar.org',
             'phone' => '+3141515272',
         ],
