@@ -1,6 +1,7 @@
 <?php namespace Frostbite\Http\Controllers;
 
 use Frostbite\Repos\PostRepo;
+use Request;
 
 class PostController extends Controller {
 
@@ -45,5 +46,17 @@ class PostController extends Controller {
         }
 
         return view('post.edit')->withPost($post);
+    }
+
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function saveChanges($id)
+    {
+        $input = Request::only('title', 'contents', 'is_important');
+        $input['id'] = $id;
+
+        dd($input);
     }
 }

@@ -42,4 +42,5 @@ Route::group(['middleware' => 'auth'], function() {
 
     // Edit posts.
     Route::get('posts/{id}/edit', 'PostController@edit');
+    Route::post('posts/{id}/edit', 'PostController@saveChanges');
 });
