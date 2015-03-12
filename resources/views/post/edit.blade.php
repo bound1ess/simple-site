@@ -9,7 +9,7 @@
 
             <div class="col-sm-8">
                 <input type="text" value="{{ old('title') ?: $post->title }}"
-                    class="form-control">
+                    class="form-control" name="title">
             </div>
         </div>
 
@@ -20,11 +20,19 @@
 
             <div class="col-sm-8">
                 <textarea name="contents"
-                    class="form-control">{{ old('contents') ?: $post->contents }}</textarea>
+                    class="form-control" rows="15">{{ old('contents') ?: $post->contents }}</textarea>
             </div>
         </div>
 
         <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="is_important">
+                        {{ trans('messages.important') }}
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div class="form-group">
