@@ -40,6 +40,10 @@ class PostController extends Controller {
      */
     public function edit($id)
     {
-        dd((int) $id);
+        if (is_null($post = $this->repo->get($id))) {
+            abort(404);
+        }
+
+        return view('post.edit')->withPost($post);
     }
 }
