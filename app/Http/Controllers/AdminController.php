@@ -2,22 +2,29 @@
 
 use Request;
 use Frostbite\Validators\MainPageValidator, Frostbite\Misc\ConfigFileUpdater;
-use Frostbite\Repos\PostRepo;
+use Frostbite\Repos\PostRepo, Frostbite\Repos\CategoryRepo;
 
 class AdminController extends Controller {
 
     /**
      * @var PostRepo
      */
-    protected $repo;
+    protected $postRepo;
 
     /**
-     * @param PostRepo $repo
+     * @var CategoryRepo
+     */
+    protected $categoryRepo;
+
+    /**
+     * @param PostRepo $postRepo
+     * @param CategoryRepo $categoryRepo
      * @return AdminController
      */
-    public function __construct(PostRepo $repo)
+    public function __construct(PostRepo $postRepo, CategoryRepo $categoryRepo)
     {
-        $this->repo = $repo;
+        $this->postRepo     = $postRepo;
+        $this->categoryRepo = $categoryRepo;
     }
 
     /**
@@ -51,7 +58,7 @@ class AdminController extends Controller {
      */
     public function posts()
     {
-        return view('admin.posts')->withPosts($this->repo->all());
+        return view('admin.posts')->withPosts($this->postRepo->all());
     }
 
     /**
@@ -59,6 +66,6 @@ class AdminController extends Controller {
      */
     public function categories()
     {
-        return view('admin.categories');
+        return view('admin.categories')->withCategories($this->categoryRepo->buildList());
     }
 }
