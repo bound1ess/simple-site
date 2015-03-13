@@ -73,4 +73,22 @@ class PostController extends Controller {
 
         return redirect()->to('post/' . $id);
     }
+
+    /**
+     * @return Response
+     */
+    public function create()
+    {
+        return view('post.new');
+    }
+
+    /**
+     * @return Response
+     */
+    public function store()
+    {
+        $input = Request::only('title', 'contents', 'category_id', 'is_important');
+
+        dd($input);
+    }
 }

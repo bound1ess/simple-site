@@ -33,4 +33,5 @@ return [
     'edit' => 'Edit',
     'title' => 'Title',
     'contents' => 'Contents',
+    'new' => 'New',
 ];
