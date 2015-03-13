@@ -20,8 +20,15 @@ class CategoryRepo {
     }
 
     /**
+     * @return Illuminate\Support\Collection
+     */
+    public function all()
+    {
+        return $this->category->get();
+    }
+
+    /**
      * @param int $id
-     *
      * @return Category|null
      */
     public function get($id)

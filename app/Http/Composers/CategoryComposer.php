@@ -3,7 +3,7 @@
 use Illuminate\Contracts\View\View;
 use Frostbite\Repos\CategoryRepo;
 
-class CategoryListComposer {
+class CategoryComposer {
 
     /**
      * @var CategoryRepo
@@ -12,7 +12,7 @@ class CategoryListComposer {
 
     /**
      * @param CategoryRepo $repo
-     * @return CategoryListComposer
+     * @return CategoryComposer
      */
     public function __construct(CategoryRepo $repo)
     {
@@ -25,6 +25,6 @@ class CategoryListComposer {
      */
     public function compose(View $view)
     {
-        $view->with('categories', $this->categoryRepo->buildList());
+        $view->with('categories', $this->categoryRepo->all());
     }
 }

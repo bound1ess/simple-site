@@ -12,6 +12,11 @@ class ComposerServiceProvider extends ServiceProvider {
     {
         View::composer('layouts.master', 'Frostbite\\Http\\Composers\\CategoryListComposer');
         View::composer('layouts.master', 'Frostbite\\Http\\Composers\\ImportantPostComposer');
+
+        View::composer(
+            'partials.select-category',
+            'Frostbite\\Http\\Composers\\CategoryComposer'
+        );
     }
 
     /**
