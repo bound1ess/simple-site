@@ -13,7 +13,7 @@
     @if (count($posts) > 0)
         <h2>{{ Lang::get('messages.posts') }}</h2>
         <ul class="list-unstyled">
-            @foreach ($posts as $post)
+            @foreach ($posts->reverse() as $post)
                 <li><a href="/post/{{ $post->id }}">{{ $post->title }}</a></li>
             @endforeach
         </ul>
