@@ -43,4 +43,12 @@ class CategoryController extends Controller {
     {
         dd((int) $id);
     }
+
+    /**
+     * @return Response
+     */
+    public function create()
+    {
+        echo 'Creating a new category...';
+    }
 }

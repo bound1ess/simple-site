@@ -50,4 +50,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     // Edit a category.
     Route::get('categories/{id}/edit', 'CategoryController@edit');
+
+    // Add a new category.
+    Route::get('categories/new', 'CategoryController@create');
 });
