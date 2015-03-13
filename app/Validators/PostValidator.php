@@ -6,7 +6,7 @@ class PostValidator extends AbstractValidator {
      * @var array
      */
     protected $rules = [
-        'id'           => 'required|integer',
+        'id'           => 'integer',
         'title'        => 'required|string',
         'contents'     => 'required|string',
         'is_important' => 'required|boolean',

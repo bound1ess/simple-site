@@ -19,6 +19,15 @@ class PostRepo {
     }
 
     /**
+     * @param array $input
+     * @return int
+     */
+    public function create(array $input)
+    {
+        return $this->post->create($input)->id;
+    }
+
+    /**
      * @param integer $id
      * @return null|Post
      */

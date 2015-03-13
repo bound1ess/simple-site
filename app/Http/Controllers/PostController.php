@@ -89,6 +89,14 @@ class PostController extends Controller {
     {
         $input = Request::only('title', 'contents', 'category_id', 'is_important');
 
-        dd($input);
+        $input['is_important'] = $input['is_important'] === 'on';
+
+        if ( ! with(new PostValidator)->validate($input)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.post'));
+        }
+
+        $postId = $this->repo->create($input);
+
+        return redirect()->to('post/' . $postId);
     }
 }
