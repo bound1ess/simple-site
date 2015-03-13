@@ -56,13 +56,21 @@ class PostController extends Controller {
     {
         $input = Request::only('title', 'contents', 'is_important');
 
-        $input['id'] = $id;
+        $input['id']           = $id;
         $input['is_important'] = $input['is_important'] === 'on';
 
         if ( ! with(new PostValidator)->validate($input)) {
             return redirect()->back()->withInput()->withMessage(trans('errors.post'));
         }
 
-        // ...
+        $post = $this->repo->get($id);
+
+        $post->title        = $input['title'];
+        $post->contents     = $input['contents'];
+        $post->is_important = $input['is_important'];
+
+        $post->save();
+
+        return redirect()->to('post/' . $id);
     }
 }
