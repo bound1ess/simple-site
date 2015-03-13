@@ -1,6 +1,6 @@
 <?php namespace Frostbite\Http\Controllers;
 
-use Frostbite\Repos\PostRepo;
+use Frostbite\Repos\PostRepo, Frostbite\Validators\PostValidator;
 use Request;
 
 class PostController extends Controller {
@@ -55,8 +55,14 @@ class PostController extends Controller {
     public function saveChanges($id)
     {
         $input = Request::only('title', 'contents', 'is_important');
-        $input['id'] = $id;
 
-        dd($input);
+        $input['id'] = $id;
+        $input['is_important'] = $input['is_important'] === 'on';
+
+        if ( ! with(new PostValidator)->validate($input)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.post'));
+        }
+
+        // ...
     }
 }

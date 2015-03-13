@@ -1,6 +1,12 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
+    @if (Session::has('message'))
+        <div class="alert alert-danger">
+            {{ Session::get('message') }}
+        </div>
+    @endif
+
     <form method="post" action="/{{ Request::path() }}" class="form-horizontal">
         <div class="form-group">
             <label class="col-sm-2 control-label" for="title">
