@@ -35,4 +35,12 @@ class CategoryController extends Controller {
             'categoryId' => $id,
         ]);
     }
+
+    /**
+     * @return Response
+     */
+    public function edit($id)
+    {
+        dd((int) $id);
+    }
 }

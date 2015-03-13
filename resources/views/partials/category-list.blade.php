@@ -4,6 +4,7 @@
             <a href="/category/{{ $category->getRootCategory()->id }}">
                 {{ $category->getRootCategory()->name }}
             </a>
+            [<a href="/categories/{{ $category->getRootCategory()->id }}/edit">{{ trans('messages.edit') }}</a>]
         </li>
 
         @if ( ! $category->hasNoChildren())
