@@ -1,7 +1,41 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
-    <form method="post" action="/{{ Request::path() }}">
+    <form method="post" action="/{{ Request::path() }}" class="form-horizontal">
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="title">
+                {{ trans('messages.title') }}
+            </label>
+
+            <div class="col-sm-8">
+                <input type="text" value="{{ old('title') }}"
+                    class="form-control" name="title">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="contents">
+                {{ trans('messages.contents') }}
+            </label>
+
+            <div class="col-sm-8">
+                <textarea name="contents"
+                    class="form-control" rows="15">{{ old('contents') }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="is_important"
+                            {{ old('is_important') ? ' checked' : '' }}>
+                        {{ trans('messages.important') }}
+                    </label>
+                </div>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
