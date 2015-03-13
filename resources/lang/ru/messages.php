@@ -7,6 +7,7 @@ return [
     'navigation'     => 'Navigation',
     'important'      => 'Important',
     'sub-categories' => 'Sub categories',
+    'category'       => 'Category',
     'posts'          => 'Posts',
 
     // Login related.
@@ -30,8 +31,8 @@ return [
     'name' => 'Project name',
     'desc' => 'The slogan',
 
-    'edit' => 'Edit',
-    'title' => 'Title',
+    'edit'     => 'Edit',
+    'title'    => 'Title',
     'contents' => 'Contents',
-    'new' => 'New',
+    'new'      => 'New',
 ];
