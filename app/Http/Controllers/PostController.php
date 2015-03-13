@@ -54,7 +54,7 @@ class PostController extends Controller {
      */
     public function saveChanges($id)
     {
-        $input = Request::only('title', 'contents', 'is_important');
+        $input = Request::only('title', 'contents', 'is_important', 'category_id');
 
         $input['id']           = $id;
         $input['is_important'] = $input['is_important'] === 'on';
@@ -68,6 +68,7 @@ class PostController extends Controller {
         $post->title        = $input['title'];
         $post->contents     = $input['contents'];
         $post->is_important = $input['is_important'];
+        $post->category_id  = $input['category_id'];
 
         $post->save();
 

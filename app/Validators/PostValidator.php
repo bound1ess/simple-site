@@ -10,5 +10,6 @@ class PostValidator extends AbstractValidator {
         'title'        => 'required|string',
         'contents'     => 'required|string',
         'is_important' => 'required|boolean',
+        'category_id'  => 'required|integer',
     ];
 }
