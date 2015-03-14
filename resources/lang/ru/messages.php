@@ -38,4 +38,6 @@ return [
 
     'category-name'   => 'Category name',
     'parent-category' => 'Parent category',
+
+    'placeholder' => 'Type something cool here...',
 ];

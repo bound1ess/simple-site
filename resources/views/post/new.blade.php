@@ -22,8 +22,8 @@
             </label>
 
             <div class="col-sm-8">
-                <textarea name="contents"
-                    class="form-control" rows="15">{{ old('contents') }}</textarea>
+                <textarea name="contents" class="hidden"></textarea>
+                <div class="editor lead"></div>
             </div>
         </div>
 
@@ -51,4 +51,8 @@
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
+
+    @include('partials.editor', [
+        'placeholder' => old('contents'),
+    ])
 @stop
