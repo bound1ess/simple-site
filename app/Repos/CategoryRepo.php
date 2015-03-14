@@ -20,6 +20,15 @@ class CategoryRepo {
     }
 
     /**
+     * @param array $input
+     * @return int
+     */
+    public function create(array $input)
+    {
+        return $this->category->create($input)->id;
+    }
+
+    /**
      * @return Illuminate\Support\Collection
      */
     public function all()

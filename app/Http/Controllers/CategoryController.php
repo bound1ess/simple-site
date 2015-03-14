@@ -63,5 +63,7 @@ class CategoryController extends Controller {
         if ( ! with(new CategoryValidator)->validate($input)) {
             return redirect()->back()->withInput()->withMessage(trans('errors.category'));
         }
+
+        return redirect()->to('category/' . $this->repo->create($input));
     }
 }
