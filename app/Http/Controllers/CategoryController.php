@@ -38,6 +38,7 @@ class CategoryController extends Controller {
     }
 
     /**
+     * @param int $id
      * @return Response
      */
     public function edit($id)
@@ -49,6 +50,17 @@ class CategoryController extends Controller {
         return view('category.edit')
             ->withCategory($category)
             ->with('categoryId', $category->parent_id);
+    }
+
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function saveChanges($id)
+    {
+        $input = Request::only('name', 'parent_id');
+
+        dd($input);
     }
 
     /**

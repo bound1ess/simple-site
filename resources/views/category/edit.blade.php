@@ -15,7 +15,10 @@
             </div>
         </div>
 
-        @include('partials.select-category')
+        @include('partials.select-category', [
+            'categoryLabel' => trans('messages.parent-category'),
+            'categoryName'  => 'parent_id',
+        ])
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
