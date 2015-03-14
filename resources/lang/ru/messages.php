@@ -24,7 +24,7 @@ return [
     'categories' => 'Categories',
     'dashboard'  => 'Dashboard',
 
-    'save' => 'Save',
+    'save'     => 'Save',
     'old-pswd' => 'Old password',
     'new-pswd' => 'New password',
 
@@ -35,4 +35,7 @@ return [
     'title'    => 'Title',
     'contents' => 'Contents',
     'new'      => 'New',
+
+    'category-name'   => 'Category name',
+    'parent-category' => 'Parent category',
 ];

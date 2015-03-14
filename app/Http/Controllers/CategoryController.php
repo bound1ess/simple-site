@@ -58,7 +58,7 @@ class CategoryController extends Controller {
      */
     public function store()
     {
-        $input = Request::only('name', 'category_id');
+        $input = Request::only('name', 'parent_id');
 
         dd($input);
     }
