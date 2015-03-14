@@ -83,7 +83,7 @@ class PostController extends Controller {
     public function create()
     {
         if ( ! Request::has('category_id')) {
-            $categoryId = 1;
+            $categoryId = old('category_id') ?: 1;
         } else {
             $categoryId = intval(Request::get('category_id'));
         }
