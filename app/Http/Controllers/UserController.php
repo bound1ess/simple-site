@@ -22,7 +22,7 @@ class UserController extends Controller {
             return redirect()->intended('admin/dashboard');
         } else {
             return redirect()->back()->withInput()
-                ->with('error_message', trans('errors.login'));
+                ->withMessage(trans('errors.login'));
         }
     }
 

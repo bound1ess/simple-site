@@ -1,6 +1,8 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
+    @include('partials.error')
+
     <form method="post" action="/{{ Request::path() }}" class="form-horizontal">
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">

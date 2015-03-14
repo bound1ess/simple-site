@@ -1,10 +1,7 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
-    <!-- The error message. -->
-    @if (Session::has('message'))
-        <div class="alert alert-danger">{{ Session::get('message') }}</div>
-    @endif
+    @include('partials.error')
 
     <form method="post" action="/{{ Request::path() }}" class="form-horizontal">
         <div class="form-group">
