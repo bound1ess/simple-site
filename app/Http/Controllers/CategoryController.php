@@ -42,7 +42,13 @@ class CategoryController extends Controller {
      */
     public function edit($id)
     {
-        dd((int) $id);
+        if (is_null($category = $this->repo->get($id))) {
+            abort(404);
+        }
+
+        return view('category.edit')
+            ->withCategory($category)
+            ->with('categoryId', $category->parent_id);
     }
 
     /**
