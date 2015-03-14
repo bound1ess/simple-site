@@ -22,4 +22,10 @@
             {{ trans('errors.no-posts') }}
         </p>
     @endif
+
+    @if (Auth::check())
+        <a href="/posts/new?category_id={{ $categoryId }}" class="btn btn-lg btn-primary">
+            {{ trans('messages.new') }}
+        </a>
+    @endif
 @stop
