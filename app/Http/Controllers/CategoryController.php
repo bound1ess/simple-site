@@ -60,7 +60,23 @@ class CategoryController extends Controller {
     {
         $input = Request::only('name', 'parent_id');
 
-        dd($input);
+        if ( ! with(new CategoryValidator)->validate($input)) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withMessage(trans('errors.category'));
+        }
+
+        if (is_null($category = $this->repo->get($id))) {
+            abort(404);
+        }
+
+        $category->name      = $input['name'];
+        $category->parent_id = $input['parent_id'];
+
+        $category->save();
+
+        return redirect()->to('category/' . $category->id);
     }
 
     /**
