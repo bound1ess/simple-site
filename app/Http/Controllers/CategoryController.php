@@ -1,6 +1,7 @@
 <?php namespace Frostbite\Http\Controllers;
 
 use Frostbite\Repos\CategoryRepo;
+use Request;
 
 class CategoryController extends Controller {
 
@@ -49,6 +50,16 @@ class CategoryController extends Controller {
      */
     public function create()
     {
-        echo 'Creating a new category...';
+        return view('category.new');
+    }
+
+    /**
+     * @return Response
+     */
+    public function store()
+    {
+        $input = Request::only('name', 'category_id');
+
+        dd($input);
     }
 }

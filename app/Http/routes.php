@@ -53,4 +53,5 @@ Route::group(['middleware' => 'auth'], function() {
 
     // Add a new category.
     Route::get('categories/new', 'CategoryController@create');
+    Route::post('categories/new', 'CategoryController@store');
 });
