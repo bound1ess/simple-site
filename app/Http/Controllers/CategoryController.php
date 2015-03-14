@@ -1,6 +1,6 @@
 <?php namespace Frostbite\Http\Controllers;
 
-use Frostbite\Repos\CategoryRepo;
+use Frostbite\Repos\CategoryRepo, Frostbite\Validators\CategoryValidator;
 use Request;
 
 class CategoryController extends Controller {
@@ -60,6 +60,8 @@ class CategoryController extends Controller {
     {
         $input = Request::only('name', 'parent_id');
 
-        dd($input);
+        if ( ! with(new CategoryValidator)->validate($input)) {
+            return redirect()->back()->withInput()->withMessage(trans('errors.category'));
+        }
     }
 }

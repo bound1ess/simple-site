@@ -6,4 +6,5 @@ return [
     'pswd-mismatch' => 'Your ACTUAL (old) password is not correct.',
     'main-page' => 'The company name or/and slogan is/are incorrect.',
     'post' => 'You did leave blank some of the fields.',
+    'category' => 'Please fill in the category name.',
 ];

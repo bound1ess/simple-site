@@ -10,7 +10,7 @@
             </label>
 
             <div class="col-sm-8">
-                <input type="text" class="form-control" value="{{ old('name') }}">
+                <input name="name" type="text" class="form-control" value="{{ old('name') }}">
             </div>
         </div>
 
