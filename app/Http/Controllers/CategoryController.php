@@ -71,6 +71,13 @@ class CategoryController extends Controller {
             abort(404);
         }
 
+        if ($input['parent_id'] == $category->id) {
+            // You gotta be kidding me.
+            return redirect()
+                ->back()
+                ->withInput();
+        }
+
         $category->name      = $input['name'];
         $category->parent_id = $input['parent_id'];
 
