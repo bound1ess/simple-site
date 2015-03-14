@@ -7,7 +7,7 @@
         <select name="{{ isset($categoryName) ? $categoryName : 'category_id' }}"
             class="form-control">
         @foreach ($categories as $category)
-            @if ( ! isset($post) or $post->category_id !== $category->id)
+            @if ( ! isset($categoryId) or $categoryId != $category->id)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
             @else
             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>

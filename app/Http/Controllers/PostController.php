@@ -45,7 +45,9 @@ class PostController extends Controller {
             abort(404);
         }
 
-        return view('post.edit')->withPost($post);
+        return view('post.edit')
+            ->withPost($post)
+            ->with('categoryId', $post->category_id);
     }
 
     /**
@@ -80,7 +82,13 @@ class PostController extends Controller {
      */
     public function create()
     {
-        return view('post.new');
+        if ( ! Request::has('category_id')) {
+            $categoryId = 1;
+        } else {
+            $categoryId = intval(Request::get('category_id'));
+        }
+
+        return view('post.new')->with('categoryId', $categoryId);
     }
 
     /**
