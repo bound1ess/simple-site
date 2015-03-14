@@ -17,5 +17,9 @@
                 <li><a href="/post/{{ $post->id }}">{{ $post->title }}</a></li>
             @endforeach
         </ul>
+    @else
+        <p class="lead">
+            {{ trans('errors.no-posts') }}
+        </p>
     @endif
 @stop
