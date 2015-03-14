@@ -1,0 +1,6 @@
+{
+    "name": "simple-site",
+    "dependencies": {
+        "medium-editor": "latest"
+    }
+}
