@@ -6,9 +6,25 @@
 <script>
     window.onload = function() {
         var editor = new MediumEditor('.editor', {
-            placeholder: "{{ $placeholder ?: trans('messages.placeholder') }}",
-            buttons: ['image'],
+            placeholder: "{{ trans('messages.placeholder') }}",
+            buttons: [
+                'anchor',
+                'image',
+                'bold',
+                'italic',
+                'underline',
+                'unorderedlist',
+                'orderedlist',
+                'justifyLeft',
+                'justifyRight',
+            ],
         });
+
+        document.getElementsByTagName('form')[0].onsubmit = function(event) {
+            var textarea = this.getElementsByTagName('textarea')[0];
+
+            textarea.innerHTML = this.getElementsByClassName('editor')[0].innerHTML;
+        };
     };
 </script>
 

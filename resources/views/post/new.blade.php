@@ -23,7 +23,7 @@
 
             <div class="col-sm-8">
                 <textarea name="contents" class="hidden"></textarea>
-                <div class="editor lead"></div>
+                <div class="editor lead">{!! old('contents') !!}</div>
             </div>
         </div>
 
@@ -52,7 +52,5 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
 
-    @include('partials.editor', [
-        'placeholder' => old('contents'),
-    ])
+    @include('partials.editor')
 @stop
