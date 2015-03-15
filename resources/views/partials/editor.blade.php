@@ -18,6 +18,7 @@
                 'justifyLeft',
                 'justifyRight',
             ],
+            targetBlank: true,
         });
 
         document.getElementsByTagName('form')[0].onsubmit = function(event) {
@@ -33,5 +34,9 @@
         background-color: white;
         color: black;
         padding: 10px;
+    }
+
+    .editor a {
+        color: black;
     }
 </style>
