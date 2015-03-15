@@ -4,7 +4,7 @@
     <h2>{{ $post->title }}</h2>
 
     <p class="lead">
-        {{ $post->contents }}
+        {!! $post->contents !!}
     </p>
 
     @if (Auth::check())

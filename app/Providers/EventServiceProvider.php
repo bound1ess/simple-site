@@ -26,7 +26,11 @@ class EventServiceProvider extends ServiceProvider {
 	{
 		parent::boot($events);
 
-		//
+		\Frostbite\Post::saving(function($post) {
+            $post->contents = str_replace('<p>', '<p class="lead">', $post->contents);
+
+            return true;
+        });
 	}
 
 }
