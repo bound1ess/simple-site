@@ -41,4 +41,6 @@ return [
 
     'placeholder' => 'Type something cool here...',
     'back' => 'Back',
+
+    'anchor-placeholder' => 'Type or paste a link...',
 ];

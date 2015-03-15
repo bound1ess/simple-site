@@ -19,6 +19,7 @@
                 'justifyRight',
             ],
             targetBlank: true,
+            anchorInputPlaceholder: "{{ trans('messages.anchor-placeholder') }}",
         });
 
         document.getElementsByTagName('form')[0].onsubmit = function(event) {
