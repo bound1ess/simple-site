@@ -40,4 +40,5 @@ return [
     'parent-category' => 'Parent category',
 
     'placeholder' => 'Type something cool here...',
+    'back' => 'Back',
 ];

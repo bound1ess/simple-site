@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('body')
-    <h2>{{ $post->title }}</h2>
+    <h2>
+        <a href="/category/{{ $categoryId }}">{{ trans('messages.back') }}</a>
+        &rarr; {{ $post->title }}
+    </h2>
 
     <p class="lead">
         {!! $post->contents !!}
