@@ -8,6 +8,7 @@
                 padding-top: 80px;
             }
         </style>
+        <link rel="icon" href="/favicon.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.2/slate/bootstrap.min.css">
     </head>
     <body>
