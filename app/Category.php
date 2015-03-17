@@ -28,7 +28,7 @@ class Category extends Model {
     }
 
     /**
-     * @return array
+     * @return Illuminate\Support\Collection
      */
     public function childCategories()
     {

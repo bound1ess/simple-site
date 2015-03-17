@@ -35,6 +35,7 @@ return [
 
     'category-name' => 'Название раздела',
     'parent-category' => 'Родительский раздел',
+    'no-parent-category' => '(Нет родительского раздела)',
 
     'name' => 'Название',
     'desc' => 'Слоган',

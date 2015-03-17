@@ -13,6 +13,7 @@
             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
             @endif
         @endforeach
+            <option value="0">{{ trans('messages.no-parent-category') }}</option>
         </select>
     </div>
 </div>

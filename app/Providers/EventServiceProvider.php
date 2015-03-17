@@ -31,6 +31,11 @@ class EventServiceProvider extends ServiceProvider {
 
             return true;
         });
-	}
 
+        \Frostbite\Category::saving(function($category) {
+            $category->parent_id = $category->parent_id ?: null;
+
+            return true;
+        });
+	}
 }

@@ -54,12 +54,19 @@ class CategoryRepo {
         $list = [];
 
         // This filter selects ONLY those nodes that have no parent node.
-        $filter = function(Category $category) {
-            return is_null($pId = $category->parent_id) or $pId == $category->id;
+        $topFilter = function(Category $category) {
+            return is_null($category->parent_id);
         };
 
-        foreach (array_filter($categories, $filter) as $category) {
-            $list[] = $this->doBuild($category, $categories);
+        $childFilter = function(Category $category) use($topFilter) {
+            return ! $topFilter($category);
+        };
+
+        $topNodes   = array_filter($categories, $topFilter);
+        $childNodes = array_filter($categories, $childFilter);
+
+        foreach ($topNodes as $category) {
+            $list[] = $this->doBuild($category, $childNodes);
         }
 
         return $list;

@@ -43,4 +43,6 @@ return [
     'back' => 'Back',
 
     'anchor-placeholder' => 'Type or paste a link...',
+
+    'no-parent-category' => '(No parent category)',
 ];

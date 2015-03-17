@@ -7,6 +7,6 @@ class CategoryValidator extends AbstractValidator {
      */
     protected $rules = [
         'name'      => 'required|string',
-        'parent_id' => 'required|integer|exists:categories,id',
+        'parent_id' => 'required|integer',
     ];
 }
