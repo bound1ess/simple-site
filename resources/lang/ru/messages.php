@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'upload' => 'Загрузка изображений',
+
     'navigation' => 'Навигация',
     'important' => 'Важное',
     'sub-categories' => 'Подразделы',

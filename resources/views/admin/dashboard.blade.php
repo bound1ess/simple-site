@@ -7,6 +7,7 @@
                 {!! smart_link('/admin/dashboard', trans('messages.main')) !!}
                 {!! smart_link('/admin/posts', trans('messages.posts')) !!}
                 {!! smart_link('/admin/categories', trans('messages.categories')) !!}
+                {!! smart_link('/admin/upload', trans('messages.upload')) !!}
             </ul>
         </div>
 

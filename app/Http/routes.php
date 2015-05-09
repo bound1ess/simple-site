@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // The categories page.
     Route::get('categories', 'AdminController@categories');
+
+    // Everything related to image uploads.
+    Route::get('upload', 'UploadController@index');
 });
 
 // Only available to the registered users.

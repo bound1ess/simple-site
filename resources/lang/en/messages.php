@@ -3,6 +3,7 @@
 return [
     //'project-name' => 'Foo and Co',
     //'project-desc' => 'Join our foobar community today!',
+    'upload' => 'Upload images',
 
     'navigation'     => 'Navigation',
     'important'      => 'Important',
