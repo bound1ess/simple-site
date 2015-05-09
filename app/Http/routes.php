@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     // Everything related to image uploads.
     Route::get('upload', 'UploadController@index');
+    Route::post('upload/save', 'UploadController@save');
+    //Route::get('upload/hide', 'UploadController@hide');
 });
 
 // Only available to the registered users.

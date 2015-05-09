@@ -26,4 +26,12 @@ class UploadController extends Controller {
     {
         return view('upload.index')->withUploads($this->repo->all());
     }
+
+    /**
+     * @return string
+     */
+    public function save()
+    {
+        return 'OK';
+    }
 }

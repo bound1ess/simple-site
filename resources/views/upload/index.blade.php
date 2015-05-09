@@ -6,7 +6,9 @@
 
     <h3>{{ trans('messages.upload') }}</h3>
 
-    <form class="dropzone" id="dropzone"></form>
+    <form class="dropzone" id="dropzone">
+        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    </form>
 
     <hr>
     <ul>
@@ -42,6 +44,9 @@
                 maxFiles: 3,
                 acceptedFiles: 'image/jpeg',
                 autoProcessQueue: true,
+                sending: function(formData) {
+                    formData.append('_token', $('[name=_token]').val());
+                },
                 // correct wording here
             });
         });
