@@ -11,7 +11,7 @@
     </form>
 
     <hr>
-    <ul>
+    <ul id="uploads">
         @foreach ($uploads as $upload)
             <li>
                 <a href="/uploads/{{ urlencode($upload->path) }}" target="_blank">
@@ -28,6 +28,8 @@
     <script src="/jquery.min.js"></script>
     <script src="/dropzone/dropzone.min.js"></script>
     <script>
+        Dropzone.autoDiscover = false;
+
         $(document).ready(function() {
             $('.hide-upload').click(function() {
                 return confirm('{{ trans('upload.confirm-hide') }}');
@@ -44,8 +46,11 @@
                 maxFiles: 3,
                 acceptedFiles: 'image/jpeg',
                 autoProcessQueue: true,
-                sending: function(formData) {
+                sending: function(file, xhr, formData) {
                     formData.append('_token', $('[name=_token]').val());
+                },
+                success: function(file) {
+                    $('#uploads').prepend($('<li>').html(file.name));
                 },
                 // correct wording here
             });

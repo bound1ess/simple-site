@@ -23,6 +23,6 @@ class UploadRepo {
      */
     public function all()
     {
-        return $this->upload->whereVisible(true)->get();
+        return $this->upload->whereVisible(true)->get()->reverse();
     }
 }
