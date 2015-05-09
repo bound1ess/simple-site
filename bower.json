@@ -1,6 +1,7 @@
 {
     "name": "simple-site",
     "dependencies": {
-        "medium-editor": "latest"
+        "medium-editor": "latest",
+        "dropzone": "latest"
     }
 }
