@@ -16,4 +16,11 @@
             </li>
         @endforeach
     </ul>
+
+    <script src="/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            alert('Hello, world!');
+        });
+    </script>
 @stop

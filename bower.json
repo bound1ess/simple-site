@@ -2,6 +2,7 @@
     "name": "simple-site",
     "dependencies": {
         "medium-editor": "latest",
-        "dropzone": "latest"
+        "dropzone": "latest",
+        "jquery": "latest"
     }
 }
