@@ -32,6 +32,6 @@ class UploadController extends Controller {
      */
     public function save()
     {
-        return 'OK';
+        return response()->json(['id' => 4, 'name' => 'foo.jpg']);
     }
 }

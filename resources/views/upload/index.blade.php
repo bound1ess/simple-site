@@ -49,8 +49,18 @@
                 sending: function(file, xhr, formData) {
                     formData.append('_token', $('[name=_token]').val());
                 },
-                success: function(file) {
-                    $('#uploads').prepend($('<li>').html(file.name));
+                success: function(file, response) {
+                    var fileLink = $('<a>')
+                        .html(file.name)
+                        .attr('href', '/uploads/' + response.name);
+
+                    var removeLink = $('<a>')
+                        .html(' ({{ trans('upload.hide') }})')
+                        .attr('href', '/admin/upload/hide?id=' + response.id);
+
+                    $('#uploads').prepend(
+                        $('<li>').append(fileLink).append(removeLink)
+                    );
                 },
                 // correct wording here
             });
