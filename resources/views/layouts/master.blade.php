@@ -20,8 +20,14 @@
                 font-size: 150%;
             }
 
-            #head {
-                /* background: url('/jumbotron_bg.png'); */
+            @font-face {
+                font-family: customfont;
+                src: url('/font.ttf');
+            }
+
+            #head h1 {
+                /*color: #4582ec !important*/;
+                font-family: customfont;
             }
         </style>
         @yield('css')
