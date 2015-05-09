@@ -10,7 +10,7 @@
                     {{ $upload->name }}
                 </a>
 
-                <a href="/admin/upload/hide?id={{ $upload->id }}">
+                <a class="hide-upload" href="/admin/upload/hide?id={{ $upload->id }}">
                     ({{ trans('upload.hide') }})
                 </a>
             </li>
@@ -20,7 +20,9 @@
     <script src="/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            alert('Hello, world!');
+            $('.hide-upload').click(function() {
+                return confirm('{{ trans('upload.confirm-hide') }}');
+            });
         });
     </script>
 @stop
