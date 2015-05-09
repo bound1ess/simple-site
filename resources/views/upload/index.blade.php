@@ -1,8 +1,14 @@
 @extends('admin.dashboard')
 
 @section('dashboard-body')
+    <link rel="stylesheet" href="/dropzone/dropzone.min.css">
+    <!--<link rel="stylesheet" href="/dropzone/basic.min.css">-->
+
     <h3>{{ trans('messages.upload') }}</h3>
-    <!-- Dropzone here? -->
+
+    <form class="dropzone" id="dropzone"></form>
+
+    <hr>
     <ul>
         @foreach ($uploads as $upload)
             <li>
@@ -18,10 +24,25 @@
     </ul>
 
     <script src="/jquery.min.js"></script>
+    <script src="/dropzone/dropzone.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.hide-upload').click(function() {
                 return confirm('{{ trans('upload.confirm-hide') }}');
+            });
+
+            $('#dropzone').dropzone({
+                url: '/admin/upload/save',
+                paramName: 'file',
+                maxFilesize: 5,
+                method: 'post',
+                uploadMultiple: false,
+                addRemoveLinks: false,
+                createImageThumbnails: false,
+                maxFiles: 3,
+                acceptedFiles: 'image/jpeg',
+                autoProcessQueue: true,
+                // correct wording here
             });
         });
     </script>
