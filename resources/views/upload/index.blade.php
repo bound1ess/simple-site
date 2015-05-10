@@ -65,7 +65,7 @@
                     );
                 },
                 // correct wording here
-                dictDefaultMessage: '<p class="lead">{{ trans('upload.dict.default-message') }}</p>',
+                dictDefaultMessage: '<p class="lead"><b>{{ trans('upload.dict.default-message') }}</b></p>',
                 dictFallbackMessage: '{{ trans('upload.dict.fallback-message') }}',
                 dictFallbackText: '{{ trans('upload.dict.fallback-text') }}',
                 dictInvalidFileType: '{{ trans('upload.dict.invalid-file-type') }}',

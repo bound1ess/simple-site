@@ -9,7 +9,7 @@ return [
         'fallback-message' => 'Your browser does not support drag-n-drop file uploads.',
         'fallback-text' => 'Please use the fallback form below to upload your files like in the olden days.',
         'invalid-file-type' => 'You cannot upload files of this type.',
-        'file-too-big' => 'File is too big ({{filesize}}). Max filesize: {{maxFilesize}}.',
+        'file-too-big' => 'File is too big ({{filesize}} MiB). Max filesize: {{maxFilesize}} MiB.',
         'response-error' => 'Server returned {{statusCode}} :(',
     ],
 ];
