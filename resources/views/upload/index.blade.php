@@ -43,7 +43,7 @@
                 uploadMultiple: false,
                 addRemoveLinks: false,
                 createImageThumbnails: false,
-                maxFiles: 3,
+                //maxFiles: 3,
                 acceptedFiles: 'image/jpeg',
                 autoProcessQueue: true,
                 sending: function(file, xhr, formData) {
@@ -65,6 +65,12 @@
                     );
                 },
                 // correct wording here
+                dictDefaultMessage: '<p class="lead">{{ trans('upload.dict.default-message') }}</p>',
+                dictFallbackMessage: '{{ trans('upload.dict.fallback-message') }}',
+                dictFallbackText: '{{ trans('upload.dict.fallback-text') }}',
+                dictInvalidFileType: '{{ trans('upload.dict.invalid-file-type') }}',
+                dictFileTooBig: '{{ trans('upload.dict.file-too-big') }}',
+                dictResponseError: '{{ trans('upload.dict.response-error') }}'
             });
         });
     </script>
