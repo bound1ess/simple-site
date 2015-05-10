@@ -25,4 +25,21 @@ class UploadRepo {
     {
         return $this->upload->whereVisible(true)->get()->reverse();
     }
+
+    /**
+     * @param string $name
+     * @param string $path
+     * @return integer
+     */
+    public function create($name, $path)
+    {
+        $upload = $this->upload;
+
+        $upload->name = $name;
+        $upload->path = $path;
+
+        $upload->save();
+
+        return $upload->id;
+    }
 }

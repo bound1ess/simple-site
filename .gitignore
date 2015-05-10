@@ -7,3 +7,5 @@
 /public/js/
 /public/jquery.min.*
 /public/dropzone/
+/public/uploads/*.jpg
+!/public/uploads/sample*.jpg
