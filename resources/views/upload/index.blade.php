@@ -31,7 +31,7 @@
         Dropzone.autoDiscover = false;
 
         $(document).ready(function() {
-            $('.hide-upload').click(function() {
+            $(document).on('click', '.hide-upload', function() {
                 return confirm('{{ trans('upload.confirm-hide') }}');
             });
 
@@ -52,14 +52,16 @@
                 success: function(file, response) {
                     var fileLink = $('<a>')
                         .html(file.name)
-                        .attr('href', '/uploads/' + response.name);
+                        .attr('href', '/uploads/' + response.name)
+                        .attr('target', '_blank');
 
                     var removeLink = $('<a>')
-                        .html(' ({{ trans('upload.hide') }})')
+                        .html('({{ trans('upload.hide') }})')
+                        .addClass('hide-upload')
                         .attr('href', '/admin/upload/hide?id=' + response.id);
 
                     $('#uploads').prepend(
-                        $('<li>').append(fileLink).append(removeLink)
+                        $('<li>').append(fileLink).append(' ').append(removeLink)
                     );
                 },
                 // correct wording here
