@@ -18,9 +18,10 @@
                     {{ $upload->name }}
                 </a>
 
-                <a class="hide-upload" href="/admin/upload/hide?id={{ $upload->id }}">
+                <!--<a class="hide-upload" href="/admin/upload/hide?id={{ $upload->id }}">
                     ({{ trans('upload.hide') }})
-                </a>
+                </a>-->
+                ({{ Config::get('app.url') }}/{{ $upload->path }})
             </li>
         @endforeach
     </ul>
@@ -31,9 +32,9 @@
         Dropzone.autoDiscover = false;
 
         $(document).ready(function() {
-            $(document).on('click', '.hide-upload', function() {
-                return confirm('{{ trans('upload.confirm-hide') }}');
-            });
+            //$(document).on('click', '.hide-upload', function() {
+            //    return confirm('{{ trans('upload.confirm-hide') }}');
+            //});
 
             $('#dropzone').dropzone({
                 url: '/admin/upload/save',
@@ -55,13 +56,14 @@
                         .attr('href', '/uploads/' + response.name)
                         .attr('target', '_blank');
 
-                    var removeLink = $('<a>')
-                        .html('({{ trans('upload.hide') }})')
-                        .addClass('hide-upload')
-                        .attr('href', '/admin/upload/hide?id=' + response.id);
+                    //var removeLink = $('<a>')
+                    //    .html('({{ trans('upload.hide') }})')
+                    //    .addClass('hide-upload')
+                    //    .attr('href', '/admin/upload/hide?id=' + response.id);
 
                     $('#uploads').prepend(
-                        $('<li>').append(fileLink).append(' ').append(removeLink)
+                        $('<li>').append(fileLink).append(' ')//.append(removeLink)
+                            .append('({{ Config::get('app.url') }}/' + response.name + ')')
                     );
                 },
                 // correct wording here
