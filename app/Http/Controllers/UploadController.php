@@ -13,12 +13,12 @@ class UploadController extends Controller {
     /**
      * @var integer
      */
-    protected $height = 480;
+    protected $height = 500;
 
     /**
      * @var integer
      */
-    protected $width = 640;
+    protected $width = 500;
 
     /**
      * @param UploadRepo $repo
@@ -65,8 +65,7 @@ class UploadController extends Controller {
         $img = Image::make($baseDir . $newName);
 
         // resize it
-        list ($height, $width) = $this->resize($img->height(), $img->width());
-        $img->resize($height, $width);
+        $img->resize($this->width, $this->height)->save();
 
         // save it
         $id = $this->repo->create($file->getClientOriginalName(), $newName);
@@ -75,23 +74,5 @@ class UploadController extends Controller {
             'id' => $id,
             'name' => $newName,
         ]);
-    }
-
-    /**
-     * This code shouldn't be here, but whatever.
-     *
-     * @param integer $height
-     * @param integer $width
-     * @return array
-     */
-    protected function resize($height, $width)
-    {
-        while ($height > $this->height || $width > $this->width) {
-            // maintain ratio
-            $height /= 2;
-            $width /= 2;
-        }
-
-        return [$height, $width];
     }
 }

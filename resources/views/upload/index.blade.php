@@ -21,7 +21,7 @@
                 <!--<a class="hide-upload" href="/admin/upload/hide?id={{ $upload->id }}">
                     ({{ trans('upload.hide') }})
                 </a>-->
-                ({{ Config::get('app.url') }}/{{ $upload->path }})
+                ({{ Config::get('app.url') }}/uploads/{{ $upload->path }})
             </li>
         @endforeach
     </ul>
@@ -63,7 +63,7 @@
 
                     $('#uploads').prepend(
                         $('<li>').append(fileLink).append(' ')//.append(removeLink)
-                            .append('({{ Config::get('app.url') }}/' + response.name + ')')
+                            .append('({{ Config::get('app.url') }}/uploads/' + response.name + ')')
                     );
                 },
                 // correct wording here
