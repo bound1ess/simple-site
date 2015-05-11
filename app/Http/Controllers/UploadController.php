@@ -2,6 +2,7 @@
 
 use Image, Request;
 use Frostbite\Repos\UploadRepo;
+use Frostbite\Validators\UploadValidator;
 
 class UploadController extends Controller {
 
@@ -48,7 +49,7 @@ class UploadController extends Controller {
 
         $file = Request::file('file');
 
-        if ( ! $file->isValid()) {
+        if ( ! $file->isValid() or ! (new UploadValidator)->validate(Request::only('file'))) {
             abort(400);
         }
 
